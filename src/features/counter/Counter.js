@@ -1,12 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {increment, selectCount } from './counterSlice';
+import {increment, decrement, selectCount } from './counterSlice';
 
 export function Counter() {
   const count = useSelector(selectCount);
-
   const dispatch = useDispatch();
+  
   return (
     <div>
+      <button
+          onClick={() => dispatch(decrement())}
+        >
+          Decrement
+        </button>
       <h1>
         <span>{count}</span>
       </h1>
